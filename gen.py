@@ -68,4 +68,6 @@ helm_values = CommentedMapping(value_map, comment='Couchbase Operator Chart Valu
 # dump values file
 out_stream = open('values.yaml', 'w')
 yaml.dump(helm_values, out_stream, Dumper=CommentedDumper)
-#print(yaml.dump(helm_values, out_stream, Dumper=CommentedDumper))
+
+# dump to stdout
+print(yaml.dump(helm_values, Dumper=CommentedDumper))
